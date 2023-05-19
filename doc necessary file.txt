@@ -1,0 +1,26 @@
+=== Confluent Cloud API key: lkc-635m98 ===
+
+API key:
+7UWZWTH543V5LEZF
+
+API secret:
+2UcdkvVR5Le4w/Wec/5lQ/yfVwt/fF1ySYSf1ukE3aSFdISgyUxkjoX8uE3BfDro
+
+Bootstrap server:
+pkc-xrnwx.asia-south2.gcp.confluent.cloud:9092
+
+
+docker build -t php_kafka .
+
+docker run php_kafka
+
+docker ps
+
+docker stop 4ea393be8f0e (it is CONTAINER ID)
+
+docker exec -it xenodochial_joliot sh // (xenodochial_joliot ( will be name, for checking docker ps))
+
+
+pwd
+
+php poducer.php
