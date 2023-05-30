@@ -23,4 +23,17 @@ docker exec -it xenodochial_joliot sh // (xenodochial_joliot ( will be name, for
 
 pwd
 
-php poducer.php
+php producer.php
+
+
+// local  apache kafka
+
+// run zookeeper properties
+
+\bin\windows\zookeeper-server-start.bat config\server.properties
+.\bin\windows\zookeeper-server-start.bat .\config\zookeeper.properties
+
+// run server properties
+
+bin\windows\kafka-server-start.bat config\server.properties
+.\bin\windows\kafka-server-start.bat .\config\server.properties
