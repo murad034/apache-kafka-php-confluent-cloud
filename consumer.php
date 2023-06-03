@@ -2,6 +2,19 @@
 
 
 $conf = new \RdKafka\Conf();
+$conf->set('debug', 'all');
+//$conf->set('debug', 'broker,topic');
+
+$conf->set('bootstrap.servers', 'localhost:9092');
+//$conf->set('bootstrap.servers', 'pkc-xrnwx.asia-south2.gcp.confluent.cloud:9092');
+// $conf->set('security.protocol', 'SASL_SSL');
+
+// $conf->set('security.protocol', 'SASL_PLAINTEXT');
+// $conf->set('sasl.mechanism', 'PLAIN');
+//$conf->set('sasl.username', '7UWZWTH543V5LEZF');
+//$conf->set('sasl.password', '2UcdkvVR5Le4w/Wec/5lQ/yfVwt/fF1ySYSf1ukE3aSFdISgyUxkjoX8uE3BfDro');
+$conf->set('group.id', 'group');
+// $conf->set("group.id", "group", 'errstr');
 
 $conf->set('bootstrap.servers', 'pkc-xrnwx.asia-south2.gcp.confluent.cloud:9092');
 $conf->set('security.protocol', 'SASL_SSL');

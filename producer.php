@@ -3,11 +3,12 @@
 
 $conf = new \RdKafka\Conf();
 
-$conf->set('bootstrap.servers', 'pkc-xrnwx.asia-south2.gcp.confluent.cloud:9092');
-$conf->set('security.protocol', 'SASL_SSL');
-$conf->set('sasl.mechanism', 'PLAIN');
-$conf->set('sasl.username', '7UWZWTH543V5LEZF');
-$conf->set('sasl.password', '2UcdkvVR5Le4w/Wec/5lQ/yfVwt/fF1ySYSf1ukE3aSFdISgyUxkjoX8uE3BfDro');
+$conf->set('bootstrap.servers', 'localhost:9092');
+//$conf->set('bootstrap.servers', 'pkc-xrnwx.asia-south2.gcp.confluent.cloud:9092');
+//$conf->set('security.protocol', 'SASL_SSL');
+//$conf->set('sasl.mechanism', 'PLAIN');
+//$conf->set('sasl.username', '7UWZWTH543V5LEZF');
+//$conf->set('sasl.password', '2UcdkvVR5Le4w/Wec/5lQ/yfVwt/fF1ySYSf1ukE3aSFdISgyUxkjoX8uE3BfDro');
 
 $producer = new \RdKafka\Producer($conf);
 $t = 30;

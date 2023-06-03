@@ -33,7 +33,37 @@ php producer.php
 \bin\windows\zookeeper-server-start.bat config\server.properties
 .\bin\windows\zookeeper-server-start.bat .\config\zookeeper.properties
 
+//  create topic name mytopic1
+
+.\bin\windows\kafka-topics.bat --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic mytopic1
+.\bin\windows\kafka-topics.bat --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic mysecondtopic
+
+
+.\bin\windows\kafka-topics.bat --create --bootstrap-server localhost:9092 --replication-factor 1 --partitions 1 --topic mytopic1
+.\bin\windows\kafka-topics.bat --create --bootstrap-server localhost:9092 --replication-factor 1 --partitions 1 --topic mysecondtopic
+
+.\bin\windows\kafka-topics.bat --list --bootstrap-server localhost:9092
+
+// create a group
+
+.\bin\kafka-consumer-groups.sh --bootstrap-server localhost:9092 --group group --new-consumer --create
+
+
+// message generate by producer
+
+.\bin\windows\kafka-console-producer.bat --broker-list localhost:9092 --topic mytopic1
+
+// message consume by consumer
+
+.\bin\windows\kafka-console-consumer.bat --bootstrap-server localhost:9092 --topic mytopic1 --from-beginning
+
+// list of topics
+
+.\bin\windows\kafka-topics.bat --list --zookeeper localhost:2
+.\bin\windows\kafka-topics.bat --list --bootstrap-server localhost:9092
+
 // run server properties
 
 bin\windows\kafka-server-start.bat config\server.properties
 .\bin\windows\kafka-server-start.bat .\config\server.properties
+bin\windows\kafka-server-start.bat config\server.properties
